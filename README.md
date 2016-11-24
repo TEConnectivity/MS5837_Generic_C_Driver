@@ -1,5 +1,5 @@
 # MS5837 Generic C Driver
-Arduino library for the [MS5837 sensor](http://www.te.com/usa-en/product-CAT-BLPS0037.html)
+Generic C driver for the [MS5837 sensor](http://www.te.com/usa-en/product-CAT-BLPS0037.html)
 
 ![ms5837](http://www.te.com/content/dam/te-com/catalog/part/CAT/BLP/S00/CAT-BLPS0017-t1.jpg/jcr:content/renditions/product-details.png)
 
@@ -16,8 +16,11 @@ The MS5837 sensor is a self-contained pressure and temperature sensor that is  f
 *	Very low power consumption
 
 
-##Library features
+##Driver features
 * Connection test
 * Reset
 * Aquisition resolution management
 * Temperature and pressure measurement
+
+
+**NB:** This driver is intended to provide an implementation example of the sensor communication protocol, in order to be usable you have to implement a proper I2C layer for your target platform.
