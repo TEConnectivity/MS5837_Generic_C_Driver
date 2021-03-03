@@ -17,26 +17,26 @@
 #ifndef MS5837_H_INCLUDED
 #define MS5837_H_INCLUDED
 
-#include <stdint.h>
-#include <stdbool.h>
 #include <math.h>
+#include <stdbool.h>
+#include <stdint.h>
 
 enum ms5837_resolution_osr {
-	ms5837_resolution_osr_256 = 0,
-	ms5837_resolution_osr_512,
-	ms5837_resolution_osr_1024,
-	ms5837_resolution_osr_2048,
-	ms5837_resolution_osr_4096,
-	ms5837_resolution_osr_8192
+  ms5837_resolution_osr_256 = 0,
+  ms5837_resolution_osr_512,
+  ms5837_resolution_osr_1024,
+  ms5837_resolution_osr_2048,
+  ms5837_resolution_osr_4096,
+  ms5837_resolution_osr_8192
 };
 
 enum ms5837_status {
-	ms5837_status_ok,
-	ms5837_status_no_i2c_acknowledge,
-	ms5837_status_i2c_transfer_error,
-	ms5837_status_crc_error
+  ms5837_status_ok,
+  ms5837_status_no_i2c_acknowledge,
+  ms5837_status_i2c_transfer_error,
+  ms5837_status_crc_error
 };
-	
+
 // Functions
 
 /**
@@ -50,7 +50,7 @@ void ms5837_init(void);
  * \return bool : status of MS5837
  *       - true : Device is present
  *       - false : Device is not acknowledging I2C address
-  */
+ */
 bool ms5837_is_connected(void);
 
 /**
@@ -69,10 +69,11 @@ enum ms5837_status ms5837_reset(void);
  * \param[in] ms5837_resolution_osr : Resolution requested
  *
  */
-void ms5837_set_resolution(enum ms5837_resolution_osr );
+void ms5837_set_resolution(enum ms5837_resolution_osr);
 
 /**
- * \brief Reads the temperature and pressure ADC value and compute the compensated values.
+ * \brief Reads the temperature and pressure ADC value and compute the
+ * compensated values.
  *
  * \param[out] float* : Celsius Degree temperature value
  * \param[out] float* : mbar pressure value
