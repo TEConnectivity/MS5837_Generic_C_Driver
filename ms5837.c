@@ -389,7 +389,7 @@ enum ms5837_status ms5837_read_temperature_and_pressure( float *temperature, flo
 	else
 	{
 		T2 = ( 2 * ( (int64_t)dT  * (int64_t)dT  ) ) >> 37;
-		OFF2 = ((int64_t)TEMP + 1500) * ((int64_t)TEMP + 1500) >> 4;
+		OFF2 = ((int64_t)TEMP - 2000) * ((int64_t)TEMP - 2000) >> 4;
 		SENS2 = 0 ;
 	}
 	
@@ -405,7 +405,7 @@ enum ms5837_status ms5837_read_temperature_and_pressure( float *temperature, flo
 	P = ( ( (adc_pressure * SENS) >> 21 ) - OFF ) >> 13 ;
 	
 	*temperature = ( (float)TEMP - T2 ) / 100;
-	*pressure = (float)P / 100;
+	*pressure = (float)P / 10;
 	
 	return status;
 }
